@@ -74,6 +74,16 @@ sys_getdents64 is hooked for PID 2584743 (ls) - Real function called but data po
 sys_kill is hooked for PID 2584087 (bash) - Real function not called
 ```
 
+To print out the stack traces from each syscall logged, run hookdetect with `--verbose`:
+```bash
+$> sudo ./bpf-hookdetect/src/bin/hookdetect --verbose
+sys_kill:
+    0xffffffff886b88e1 -> __x64_sys_kill
+    0xffffffff89234d38 -> do_syscall_64
+    0xffffffff8940008c -> entry_SYSCALL_64_after_hwframe
+sys_kill is hooked for PID 2584087 (bash) - Real function called but data possibly altered
+```
+
 # Example Test
 To test, download, make, and install the [Diamorphine](https://github.com/m0nad/Diamorphine) rootkit.
 Once rootkit is installed, start `hookdetect` and run:
