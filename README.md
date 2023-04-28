@@ -58,7 +58,7 @@ sudo apt install build-essential clang-11 libelf-dev zlib1g-dev libbfd-dev libca
 ## Build
 To Build from source, recusivly clone the respository the run `make` in the `src` directory to build:
 ```bash
-git clone --recusrive https://github.com/pathtofile/bpf-hookdetect.git
+git clone --recursive https://github.com/pathtofile/bpf-hookdetect.git
 cd bpf-hookdetect/src
 make
 ```
